@@ -13,6 +13,8 @@ public class Product extends BaseEntity {
 
     private BigDecimal price;
 
+    private Long dinerId;
+
     public String getName() {
         return name;
     }
@@ -35,5 +37,13 @@ public class Product extends BaseEntity {
 
     public void setPrice(BigDecimal price) {
         this.price = price;
+    }
+
+    public Long getDinerId() {
+        return dinerId;
+    }
+
+    public void setDinerId(Long dinerId) {
+        this.dinerId = dinerId;
     }
 }

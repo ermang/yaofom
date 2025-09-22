@@ -22,6 +22,7 @@
         <module>yaofom-user</module>
         <module>yaofom-product</module>
         <module>yaofom-common</module>
+        <module>yaofom-diner</module>
     </modules>
 
     <parent>

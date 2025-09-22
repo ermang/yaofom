@@ -24,7 +24,7 @@ public class ProductController {
         this.productService = productService;
     }
 
-    @RolesAllowed("SHOP_OWNER")
+    //@RolesAllowed("SHOP_OWNER")
     @PostMapping
     public void createProduct(@RequestBody CreateProductReq req){
         CreateProductServiceReq serviceReq = req2ServiceReq.createProductReq2CreateProductServiceReq(req);

@@ -1,6 +1,8 @@
 package com.eg.yaecm.product.service;
 
 import com.eg.yaecm.common.YaecmException;
+import com.eg.yaecm.product.client.DinerClient;
+import com.eg.yaecm.product.clientresp.ValidateOwnerClientResp;
 import com.eg.yaecm.product.entity.Product;
 import com.eg.yaecm.product.repo.ProductRepo;
 import com.eg.yaecm.product.servicereq.CreateProductServiceReq;
@@ -15,10 +17,12 @@ public class ProductService {
 
     private final Entity2ServiceResp entity2ServiceResp;
     private final ProductRepo productRepo;
+    private final DinerClient dinerClient;
 
-    public ProductService(Entity2ServiceResp entity2ServiceResp, ProductRepo productRepo) {
+    public ProductService(Entity2ServiceResp entity2ServiceResp, ProductRepo productRepo, DinerClient dinerClient) {
         this.entity2ServiceResp = entity2ServiceResp;
         this.productRepo = productRepo;
+        this.dinerClient = dinerClient;
     }
 
     public void createProduct(CreateProductServiceReq serviceReq) {
@@ -27,6 +31,12 @@ public class ProductService {
         p.setName(serviceReq.name);
         p.setDescr(serviceReq.description);
         p.setPrice(serviceReq.price);
+
+        ValidateOwnerClientResp clientResp = dinerClient.validateOwner(serviceReq.dinerId);
+        if (clientResp.valid == false)
+            throw new RuntimeException("aman");
+
+        p.setDinerId(serviceReq.dinerId);
 
         productRepo.save(p);
     }
