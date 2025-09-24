@@ -20,9 +20,10 @@
         <module>yaofom-service-discovery</module>
         <module>yaofom-gateway</module>
         <module>yaofom-user</module>
-        <module>yaofom-product</module>
+<!--        <module>yaofom-product</module>-->
         <module>yaofom-common</module>
         <module>yaofom-diner</module>
+        <module>yaofom-order</module>
     </modules>
 
     <parent>

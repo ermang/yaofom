@@ -1,13 +1,14 @@
-package com.eg.yaecm.product.service;
+package com.eg.yaofom.diner.service;
+
 
 import com.eg.yaecm.common.YaecmException;
-import com.eg.yaecm.product.client.DinerClient;
-import com.eg.yaecm.product.clientresp.ValidateOwnerClientResp;
-import com.eg.yaecm.product.entity.Product;
-import com.eg.yaecm.product.repo.ProductRepo;
-import com.eg.yaecm.product.servicereq.CreateProductServiceReq;
-import com.eg.yaecm.product.serviceresp.ReadProductServiceResp;
-import com.eg.yaecm.product.util.Entity2ServiceResp;
+import com.eg.yaofom.diner.entity.Diner;
+import com.eg.yaofom.diner.entity.Product;
+import com.eg.yaofom.diner.repo.DinerRepo;
+import com.eg.yaofom.diner.repo.ProductRepo;
+import com.eg.yaofom.diner.servicereq.CreateProductServiceReq;
+import com.eg.yaofom.diner.serviceresp.ReadProductServiceResp;
+import com.eg.yaofom.diner.util.Entity2ServiceResp;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -17,12 +18,14 @@ public class ProductService {
 
     private final Entity2ServiceResp entity2ServiceResp;
     private final ProductRepo productRepo;
-    private final DinerClient dinerClient;
+    private final DinerRepo dinerRepo;
+//    private final DinerClient dinerClient;
 
-    public ProductService(Entity2ServiceResp entity2ServiceResp, ProductRepo productRepo, DinerClient dinerClient) {
+
+    public ProductService(Entity2ServiceResp entity2ServiceResp, ProductRepo productRepo, DinerRepo dinerRepo) {
         this.entity2ServiceResp = entity2ServiceResp;
         this.productRepo = productRepo;
-        this.dinerClient = dinerClient;
+        this.dinerRepo = dinerRepo;
     }
 
     public void createProduct(CreateProductServiceReq serviceReq) {
@@ -32,11 +35,14 @@ public class ProductService {
         p.setDescr(serviceReq.description);
         p.setPrice(serviceReq.price);
 
-        ValidateOwnerClientResp clientResp = dinerClient.validateOwner(serviceReq.dinerId);
-        if (clientResp.valid == false)
-            throw new RuntimeException("aman");
 
-        p.setDinerId(serviceReq.dinerId);
+
+//        ValidateOwnerClientResp clientResp = dinerClient.validateOwner(serviceReq.dinerId);
+//        if (clientResp.valid == false)
+//            throw new RuntimeException("aman");
+
+        Diner d = dinerRepo.findById(serviceReq.dinerId).get();
+        p.setDiner(d);
 
         productRepo.save(p);
     }

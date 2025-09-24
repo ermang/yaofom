@@ -2,14 +2,15 @@ package com.eg.yaofom.diner.controller;
 
 
 import com.eg.yaofom.diner.req.CreateDinerReq;
-import com.eg.yaofom.diner.resp.ValidateOwnerResp;
 import com.eg.yaofom.diner.service.DinerService;
 import com.eg.yaofom.diner.servicereq.CreateDinerServiceReq;
-import com.eg.yaofom.diner.serviceresp.ValidateOwnerServiceResp;
 import com.eg.yaofom.diner.util.Req2ServiceReq;
 import com.eg.yaofom.diner.util.ServiceResp2Resp;
 import jakarta.annotation.security.RolesAllowed;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @RequestMapping("/diner")
 @RestController
@@ -32,13 +33,21 @@ public class DinerController {
         dinerService.createDiner(serviceReq);
     }
 
-    @GetMapping("/{dinerId}/validate-owner")
-    public ValidateOwnerResp validateOwner(@PathVariable Long dinerId) {
-        ValidateOwnerServiceResp serviceResp = dinerService.validateOwner(dinerId);
-        ValidateOwnerResp resp = serviceResp2Resp.readProductServiceResp2ReadProductResp(serviceResp);
+//    @GetMapping("/{dinerId}/validate-owner")
+//    public ValidateOwnerResp validateOwner(@PathVariable Long dinerId) {
+//        ValidateOwnerServiceResp serviceResp = dinerService.validateOwner(dinerId);
+//        ValidateOwnerResp resp = serviceResp2Resp.readProductServiceResp2ReadProductResp(serviceResp);
+//
+//        return resp;
+//    }
 
-        return resp;
-    }
+//    @GetMapping("/{dinerId}/validate-owner")
+//    public ValidateOwnerResp validateOwner(@PathVariable Long dinerId) {
+//        ValidateOwnerServiceResp serviceResp = dinerService.validateOwner(dinerId);
+//        ValidateOwnerResp resp = serviceResp2Resp.readProductServiceResp2ReadProductResp(serviceResp);
+//
+//        return resp;
+//    }
 
 //    @GetMapping("/{id}")
 //    public ReadProductResp getDiner(@PathVariable("id") long id){

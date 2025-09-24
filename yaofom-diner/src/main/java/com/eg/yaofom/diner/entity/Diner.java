@@ -1,5 +1,6 @@
 package com.eg.yaofom.diner.entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 
 import java.math.BigDecimal;
@@ -13,6 +14,7 @@ public class Diner extends BaseEntity {
 
     private String address;
 
+    @Column(nullable = false)
     private Long shopOwnerId;
 
     public String getName() {

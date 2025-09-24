@@ -1,4 +1,4 @@
-package com.eg.yaecm.product.servicereq;
+package com.eg.yaofom.diner.servicereq;
 
 import java.math.BigDecimal;
 

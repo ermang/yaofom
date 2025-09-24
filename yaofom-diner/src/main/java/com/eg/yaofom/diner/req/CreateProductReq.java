@@ -1,4 +1,4 @@
-package com.eg.yaecm.product.req;
+package com.eg.yaofom.diner.req;
 
 import java.math.BigDecimal;
 

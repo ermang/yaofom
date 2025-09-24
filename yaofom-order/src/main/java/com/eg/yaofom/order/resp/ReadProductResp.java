@@ -1,4 +1,4 @@
-package com.eg.yaecm.product.resp;
+package com.eg.yaofom.order.resp;
 
 import java.math.BigDecimal;
 

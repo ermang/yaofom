@@ -1,13 +1,13 @@
-package com.eg.yaecm.product.controller;
+package com.eg.yaofom.diner.controller;
 
-import com.eg.yaecm.product.req.CreateProductReq;
-import com.eg.yaecm.product.resp.ReadProductResp;
-import com.eg.yaecm.product.service.ProductService;
-import com.eg.yaecm.product.servicereq.CreateProductServiceReq;
-import com.eg.yaecm.product.serviceresp.ReadProductServiceResp;
-import com.eg.yaecm.product.util.Req2ServiceReq;
-import com.eg.yaecm.product.util.ServiceResp2Resp;
-import jakarta.annotation.security.RolesAllowed;
+
+import com.eg.yaofom.diner.req.CreateProductReq;
+import com.eg.yaofom.diner.resp.ReadProductResp;
+import com.eg.yaofom.diner.service.ProductService;
+import com.eg.yaofom.diner.servicereq.CreateProductServiceReq;
+import com.eg.yaofom.diner.serviceresp.ReadProductServiceResp;
+import com.eg.yaofom.diner.util.Req2ServiceReq;
+import com.eg.yaofom.diner.util.ServiceResp2Resp;
 import org.springframework.web.bind.annotation.*;
 
 @RequestMapping("/product")

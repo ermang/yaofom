@@ -1,14 +1,14 @@
-package com.eg.yaecm.product.serviceresp;
+package com.eg.yaofom.diner.resp;
 
 import java.math.BigDecimal;
 
-public class ReadProductServiceResp {
+public class ReadProductResp {
     public final long id;
     public final String name;
     public final String description;
     public final BigDecimal price;
 
-    public ReadProductServiceResp(long id, String name, String description, BigDecimal price) {
+    public ReadProductResp(long id, String name, String description, BigDecimal price) {
         this.id = id;
         this.name = name;
         this.description = description;

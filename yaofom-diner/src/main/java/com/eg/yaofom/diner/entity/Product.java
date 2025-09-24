@@ -1,6 +1,7 @@
-package com.eg.yaecm.product.entity;
+package com.eg.yaofom.diner.entity;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.ManyToOne;
 
 import java.math.BigDecimal;
 
@@ -13,7 +14,8 @@ public class Product extends BaseEntity {
 
     private BigDecimal price;
 
-    private Long dinerId;
+    @ManyToOne(optional = false)
+    private Diner diner;
 
     public String getName() {
         return name;
@@ -39,11 +41,11 @@ public class Product extends BaseEntity {
         this.price = price;
     }
 
-    public Long getDinerId() {
-        return dinerId;
+    public Diner getDiner() {
+        return diner;
     }
 
-    public void setDinerId(Long dinerId) {
-        this.dinerId = dinerId;
+    public void setDiner(Diner diner) {
+        this.diner = diner;
     }
 }
