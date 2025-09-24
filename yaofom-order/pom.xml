@@ -10,7 +10,7 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>yaofom-yaofomOrder</artifactId>
+    <artifactId>yaofom-order</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <dependencies>
