@@ -3,6 +3,8 @@ package com.eg.yaofom.order.entity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 
+import java.math.BigDecimal;
+
 @Entity
 public class Cart extends BaseEntity {
 

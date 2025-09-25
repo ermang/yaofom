@@ -39,9 +39,9 @@ CORS is enabled only for http://localhost:3000
 
 # YAOFOM-DINER
 
-# YAOFOM-PRODUCT
+# YAOFOM-PRODUCT  --DISABLED--
 
-# YAOFOM-ORDER --DISABLED--
+# YAOFOM-ORDER
 
 Cart and Order related operations  
 
