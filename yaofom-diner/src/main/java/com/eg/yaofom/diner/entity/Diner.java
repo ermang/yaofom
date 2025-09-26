@@ -4,6 +4,7 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 
 import java.math.BigDecimal;
+import java.time.LocalTime;
 
 @Entity
 public class Diner extends BaseEntity {
@@ -13,6 +14,10 @@ public class Diner extends BaseEntity {
     private String descr;
 
     private String address;
+
+    private LocalTime beginHour;
+
+    private LocalTime endHour;
 
     @Column(nullable = false)
     private Long shopOwnerId;
@@ -39,6 +44,22 @@ public class Diner extends BaseEntity {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public LocalTime getBeginHour() {
+        return beginHour;
+    }
+
+    public void setBeginHour(LocalTime beginHour) {
+        this.beginHour = beginHour;
+    }
+
+    public LocalTime getEndHour() {
+        return endHour;
+    }
+
+    public void setEndHour(LocalTime endHour) {
+        this.endHour = endHour;
     }
 
     public Long getShopOwnerId() {

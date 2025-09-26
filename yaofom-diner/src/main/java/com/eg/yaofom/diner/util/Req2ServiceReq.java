@@ -2,9 +2,11 @@ package com.eg.yaofom.diner.util;
 
 import com.eg.yaofom.diner.req.CreateDinerReq;
 import com.eg.yaofom.diner.req.CreateProductReq;
+import com.eg.yaofom.diner.req.UpdateWorkingHoursReq;
 import com.eg.yaofom.diner.service.SecurityService;
 import com.eg.yaofom.diner.servicereq.CreateDinerServiceReq;
 import com.eg.yaofom.diner.servicereq.CreateProductServiceReq;
+import com.eg.yaofom.diner.servicereq.UpdateWorkingHoursServiceReq;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -33,6 +35,14 @@ public class Req2ServiceReq {
         serviceReq.price = req.price;
         serviceReq.userId = securityService.getUserId();
         serviceReq.dinerId = req.dinerId;
+
+        return serviceReq;
+    }
+
+    public UpdateWorkingHoursServiceReq updateWorkingHoursReq2UpdateWorkingHoursServiceReq(UpdateWorkingHoursReq req) {
+        UpdateWorkingHoursServiceReq serviceReq = new UpdateWorkingHoursServiceReq();
+        serviceReq.beginHour = req.beginHour;
+        serviceReq.endHour = req.endHour;
 
         return serviceReq;
     }

@@ -1,6 +1,6 @@
 package com.eg.yaofom.user.entity;
 
-import com.eg.yaecm.common.YaofomRole;
+import com.eg.yaofom.common.YaofomRole;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;

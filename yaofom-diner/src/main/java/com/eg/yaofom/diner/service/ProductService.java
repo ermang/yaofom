@@ -1,7 +1,7 @@
 package com.eg.yaofom.diner.service;
 
 
-import com.eg.yaecm.common.YaecmException;
+import com.eg.yaofom.common.YaofomException;
 import com.eg.yaofom.diner.entity.Diner;
 import com.eg.yaofom.diner.entity.Product;
 import com.eg.yaofom.diner.repo.DinerRepo;
@@ -52,7 +52,7 @@ public class ProductService {
         Optional<Product> optionalP = productRepo.findById(id);
 
         if (optionalP.isEmpty())
-            throw new YaecmException("");
+            throw new YaofomException("");
 
         Product p = optionalP.get();
         ReadProductServiceResp serviceResp = entity2ServiceResp.product2ReadProductServiceResp(p);

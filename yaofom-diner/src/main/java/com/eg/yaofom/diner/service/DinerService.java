@@ -4,6 +4,7 @@ import com.eg.yaofom.diner.entity.Diner;
 import com.eg.yaofom.diner.repo.DinerRepo;
 import com.eg.yaofom.diner.servicereq.CreateDinerServiceReq;
 //import com.eg.yaofom.diner.util.Entity2ServiceResp;
+import com.eg.yaofom.diner.servicereq.UpdateWorkingHoursServiceReq;
 import com.eg.yaofom.diner.serviceresp.ValidateOwnerServiceResp;
 import org.springframework.stereotype.Service;
 
@@ -44,6 +45,25 @@ public class DinerService {
             return new ValidateOwnerServiceResp(true);
         else
             return new ValidateOwnerServiceResp(false);
+    }
+
+    public void updateWorkingHours(UpdateWorkingHoursServiceReq serviceReq) {
+        Long userId = securityService.getUserId();
+
+        Optional<Diner> optionalD = dinerRepo.findByShopOwnerId(userId);
+
+        if (optionalD.isEmpty())
+            throw new RuntimeException("lolo");
+
+        Diner diner = optionalD.get();
+
+        if (!diner.getShopOwnerId().equals(userId))
+            throw new RuntimeException("lolo");
+
+        diner.setBeginHour(serviceReq.beginHour);
+        diner.setEndHour(serviceReq.endHour);
+
+        dinerRepo.save(diner);
     }
 
 //    public ReadProductServiceResp getProduct(long id) {

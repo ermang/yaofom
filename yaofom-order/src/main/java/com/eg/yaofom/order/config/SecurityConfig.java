@@ -1,6 +1,6 @@
 package com.eg.yaofom.order.config;
 
-import com.eg.yaecm.common.JwtAuthFilter;
+import com.eg.yaofom.common.JwtAuthFilter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;

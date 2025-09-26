@@ -2,15 +2,14 @@ package com.eg.yaofom.diner.controller;
 
 
 import com.eg.yaofom.diner.req.CreateDinerReq;
+import com.eg.yaofom.diner.req.UpdateWorkingHoursReq;
 import com.eg.yaofom.diner.service.DinerService;
 import com.eg.yaofom.diner.servicereq.CreateDinerServiceReq;
+import com.eg.yaofom.diner.servicereq.UpdateWorkingHoursServiceReq;
 import com.eg.yaofom.diner.util.Req2ServiceReq;
 import com.eg.yaofom.diner.util.ServiceResp2Resp;
 import jakarta.annotation.security.RolesAllowed;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RequestMapping("/diner")
 @RestController
@@ -31,6 +30,13 @@ public class DinerController {
     public void createDiner(@RequestBody CreateDinerReq req){
         CreateDinerServiceReq serviceReq = req2ServiceReq.createDinerReq2CreateDinerServiceReq(req);
         dinerService.createDiner(serviceReq);
+    }
+
+    //@RolesAllowed("ADMIN")
+    @PutMapping
+    public void updateWorkingHours(@RequestBody UpdateWorkingHoursReq req){
+        UpdateWorkingHoursServiceReq serviceReq = req2ServiceReq.updateWorkingHoursReq2UpdateWorkingHoursServiceReq(req);
+        dinerService.updateWorkingHours(serviceReq);
     }
 
 //    @GetMapping("/{dinerId}/validate-owner")

@@ -1,6 +1,6 @@
 package com.eg.yaofom.diner;
 
-import com.eg.yaecm.common.JwtUtil;
+import com.eg.yaofom.common.JwtUtil;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Import;

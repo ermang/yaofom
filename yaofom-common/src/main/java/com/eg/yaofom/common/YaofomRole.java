@@ -1,4 +1,4 @@
-package com.eg.yaecm.common;
+package com.eg.yaofom.common;
 
 public enum YaofomRole {
     USER("USER"),

@@ -1,4 +1,4 @@
-package com.eg.yaecm.common;
+package com.eg.yaofom.common;
 
 
 import io.jsonwebtoken.Claims;

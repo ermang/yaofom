@@ -1,6 +1,6 @@
 package com.eg.yaofom.user.service;
 
-import com.eg.yaecm.common.JwtUtil;
+import com.eg.yaofom.common.JwtUtil;
 import com.eg.yaofom.user.entity.YaofomUser;
 import com.eg.yaofom.user.repo.YaofomUserRepo;
 import com.eg.yaofom.user.servicereq.LoginServiceReq;
